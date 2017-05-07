@@ -1,11 +1,16 @@
 @import 'normalize';
 @import 'skeleton';
+@import 'font-awesome';
 
 $color-background: #375983;
 $color-font-normal: #fff;
 $color-name: #50E3C2;
 $color-menu-backgroud: rgba(240, 255, 248, 0.2);
 $color-menu-border: #979797;
+$color-link: $color-font-normal;
+$color-link-hover: #1EAEDB;
+
+$left-menu-width: 400px;
 
 html, body {
   width: 100%;
@@ -22,6 +27,14 @@ h2 {
   color: $color-name;
 }
 
+a {
+
+}
+
+i {
+  margin-right: 0.5em;
+}
+
 #App {
   display: flex;
   flex-direction: row;
@@ -31,7 +44,7 @@ h2 {
 .App__Left {
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: $left-menu-width;
   padding: 4em 0;
   // background-color: rgba(255,255,255,0.3);
 }
@@ -78,13 +91,13 @@ h2 {
 .App__Right {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: calc(100% - #{$left-menu-width});
   align-items: center;
   justify-content: center;
 }
 
 .App__Intro {
-  margin-left: -25%;
+  margin-left: -$left-menu-width;
   margin-top: -15%;
 }
 
@@ -93,4 +106,21 @@ h2 {
   font-weight: 500;
   margin: 0;
   padding: 0;
+}
+
+.App__Links {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0 20%;
+
+  a {
+    font-size: large;
+    padding-right: 1em;
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
 }
