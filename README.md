@@ -1,34 +1,7 @@
 # eguitarz-github-com
 
-This README outlines the details of collaborating on this Glimmer application.
-A short introduction of this app could easily go here.
-
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with NPM)
-* [Yarn](https://yarnpkg.com/en/)
-* [Ember CLI](https://ember-cli.com/)
-
-## Installation
-
-* `git clone <repository-url>` this repository
-* `cd eguitarz-github-com`
-* `yarn`
-
-## Running / Development
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-## Further Reading / Useful Links
-
-* [glimmerjs](http://github.com/tildeio/glimmer/)
-* [ember-cli](https://ember-cli.com/)
+## Deploy
+- git checkout master && rm -rf `ls -a | grep -vE '\.gitignore|\.git|node_modules|bower_components|(^[.]{1,2}/?$)'` && git add -A && git commit -m "initialises gh-pages(in case of organisation master) commit"
+- Switch back to ember branch: git checkout ember
+- Build the site using ember-cli-github-pages: ember github-pages:commit --branch master --message "Deploy"
+- Push the master branch: git push -u origin master.
