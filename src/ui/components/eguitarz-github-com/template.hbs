@@ -3,7 +3,10 @@
     <div class="App__Profile__portrait"><img src="/profile.jpg" /></div>
   </div>
   <ul class="App__Menu">
-    <li><button>Who Am I</button></li>
+    {{#unless isHome}}
+      <li><button onclick={{action select "about-me"}}><i class="fa fa-home"></i>Home</button></li>  
+    {{/unless}}
+    <li><button onclick={{action select "who-am-i"}}>Who Am I</button></li>
     <li><button>Projects I Built</button></li>
     <li><button>My Life</button></li>
   </ul>
@@ -14,10 +17,5 @@
   </ul>
 </div>
 <div class="App__Right">
-  <div class="App__Intro">
-    <h2 class="App__Intro__name">Dale Ma</h2>
-    <div><i class="fa fa-suitcase"></i>Works at Locus Energy</div>
-    <div>Software Engineer • UI UX Designer • Gamification Analyst</div>
-    <div>I write javascripts. Mainly in Ember.</div>
-  </div>
+  {{component page}}
 </div>
