@@ -39,6 +39,7 @@ i {
   display: flex;
   flex-direction: row;
   height: 100%;
+  perspective: 800px;
 }
 
 .App__Left {
@@ -46,7 +47,11 @@ i {
   flex-direction: column;
   width: $left-menu-width;
   padding: 4em 0;
-  // background-color: rgba(255,255,255,0.3);
+  transition: all 500ms;
+}
+
+.App__Left--rotate {
+  transform: rotateY(30deg);
 }
 
 .App__Profile {
@@ -76,6 +81,11 @@ i {
     color: $color-font-normal;
     background: $color-menu-backgroud;
     border: 1px solid $color-menu-border;
+    transition: all 100ms;
+  }
+
+  button:active {
+    transform: scale(1.1);
   }
 }
 
@@ -123,4 +133,22 @@ i {
       color: $color-link-hover;
     }
   }
+}
+
+.App__Menu__home {
+  transform: scaleY(0);
+  overflow: hidden;
+  transition: all 100ms;
+  transform-origin: bottom;
+}
+
+.App__Menu__home--expand {
+  transform: scaleY(1);
+}
+
+.who-am-i .App__Menu__who-am-i button,
+.projects-i-built .App__Menu__projects-i-built button,
+.my-life .App__Menu__my-life button
+{
+  border: 3px solid white;
 }

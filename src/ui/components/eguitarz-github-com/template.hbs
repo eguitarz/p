@@ -1,14 +1,12 @@
-<div class="App__Left">
+<div class="App__Left {{leftPanelClass}}">
   <div class="App__Profile">
     <div class="App__Profile__portrait"><img src="/profile.jpg" /></div>
   </div>
-  <ul class="App__Menu">
-    {{#unless isHome}}
-      <li><button onclick={{action select "about-me"}}><i class="fa fa-home"></i>Home</button></li>  
-    {{/unless}}
-    <li><button onclick={{action select "who-am-i"}}>Who Am I</button></li>
-    <li><button onclick={{action select "projects-i-built"}}>Projects I Built</button></li>
-    <li><button>My Life</button></li>
+  <ul class="App__Menu {{page}}">
+    <li class="App__Menu__home {{homeButtonClass}}"><button onclick={{action select "about-me"}}><i class="fa fa-home"></i>Home</button></li>  
+    <li class="App__Menu__who-am-i"><button onclick={{action select "who-am-i"}}>Who Am I</button></li>
+    <li class="App__Menu__projects-i-built"><button onclick={{action select "projects-i-built"}}>Projects I Built</button></li>
+    <li class="App__Menu__my-life"><button onclick={{action select "my-life"}}>My Life</button></li>
   </ul>
   <ul class="App__Links">
     <li><a href="https://github.com/eguitarz"><i class="fa fa-github"></i></a></li>
