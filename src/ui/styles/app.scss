@@ -47,7 +47,7 @@ i {
   flex-direction: column;
   width: $left-menu-width;
   padding: 4em 0;
-  transition: all 500ms;
+  transition: all 500ms 100ms;
 }
 
 .App__Left--rotate {
@@ -68,8 +68,6 @@ i {
 
   li {
     width: 60%;
-    // padding: 0.5em 1em;
-    // margin: 1em 0;
     box-sizing: border-box;
   }
 
@@ -107,7 +105,7 @@ i {
 }
 
 .App__Intro {
-  margin-left: -$left-menu-width;
+  margin-left: -10%;
   margin-top: -15%;
 }
 
@@ -151,4 +149,58 @@ i {
 .my-life .App__Menu__my-life button
 {
   border: 3px solid white;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 12px;
+  }
+
+  #App {
+    flex-direction: column;
+  }
+
+  .App__Left {
+    width: 100%;
+  }
+
+  .App__Profile {
+    display: none;
+  }
+
+  .App__Profile__portrait {
+    width: 40%;
+  }
+
+  .App__Right {
+    width: 100%;
+  }
+
+  .App__Intro {
+    margin: 0 auto;
+  }
+
+  .App__Menu {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+
+    li {
+      width: 80px;
+    }
+
+    button {
+      font-size: 0.5em;
+    }
+
+  }
+
+  .App__Links {
+    flex-direction: row-reverse;
+    padding: 0;
+  }
+
+  .App__Left--rotate {
+    transform: rotateX(-35deg);
+  }
 }
