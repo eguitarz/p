@@ -151,6 +151,14 @@ i {
   border: 3px solid white;
 }
 
+.Container {
+  width: 580px;
+
+  h1 {
+    color: lightcyan;
+  }
+}
+
 @media screen and (max-width: 800px) {
   body {
     font-size: 12px;
@@ -202,5 +210,9 @@ i {
 
   .App__Left--rotate {
     transform: rotateX(-35deg);
+  }
+
+  .Container {
+    width: 90%;
   }
 }
