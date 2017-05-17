@@ -1,10 +1,13 @@
 <h1>My Life</h1>
 <p>
-  I like learning new skills. Here is my learning list for 2017:
+  I like learning new skills. Here is my todo list for 2017:
 </p>
 <ul>
-  <li>Surfing</li>
+  <li><button onclick={{action selectTopic 'surfing'}}>Surfing</button></li>
+  <li><button onclick={{action selectTopic 'coffee'}}>Coffee Brewing</button></li>
+  <li>Reading</li>
   <li>Web Design with Sketch</li>
   <li>React/React Native</li>
   <li>Typescript</li>
 </ul>
+<sub-list @topic={{topic}} /> 

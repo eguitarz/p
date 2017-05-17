@@ -102,6 +102,19 @@ i {
   width: calc(100% - #{$left-menu-width});
   align-items: center;
   justify-content: center;
+
+  button {
+    padding: 0.3em 0.6em;
+    margin: 0;
+    line-height: 1em;
+    color: $color-font-normal;
+    transition: all 100ms;
+    border: 0;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
 }
 
 .App__Intro {
