@@ -109,22 +109,21 @@ document.addEventListener('DOMContentLoaded', function() {
             // Toggle response visibility
             const isActive = response.classList.contains('active');
             
-            // Hide all responses first
+            // Clear all active responses first
             document.querySelectorAll('.response').forEach(resp => {
                 resp.classList.remove('active');
+                resp.style.display = 'none'; // Ensure it's completely hidden
             });
             
             // Show this response if it wasn't already active
             if (!isActive) {
                 response.classList.add('active');
+                response.style.display = 'block'; // Ensure it's visible
             }
             
             // Terminal typing effect
             if (!isActive) {
                 simulateTyping(response);
-                
-                // Re-run command processor to make commands clickable
-                setTimeout(processResponseTexts, 500);
             }
         });
     });
@@ -138,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to simulate terminal typing effect
     function simulateTyping(element) {
-        const text = element.innerHTML;
+        const text = element.textContent || element.innerText;
         element.innerHTML = '';
         element.style.display = 'block';
         
@@ -150,6 +149,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.innerHTML += text.charAt(i);
                 i++;
                 setTimeout(typeWriter, speed);
+            } else {
+                // Re-run command processor to make commands clickable
+                processResponseTexts();
             }
         }
         
