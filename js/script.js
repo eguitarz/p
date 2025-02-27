@@ -273,6 +273,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Improve mobile touch interactions
+    const touchElements = document.querySelectorAll('.clickable-link, .command, .option, .top-menu li, #submenu li');
+    touchElements.forEach(element => {
+        element.addEventListener('touchstart', function() {
+            this.classList.add('touch-active');
+        }, {passive: true});
+        
+        element.addEventListener('touchend', function() {
+            this.classList.remove('touch-active');
+        }, {passive: true});
+    });
+    
     function activateEasterEgg() {
         // Create a hidden message that appears
         const easterEgg = document.createElement('div');
