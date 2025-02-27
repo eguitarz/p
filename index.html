@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Pip-Boy Interface</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="pip-boy-container">
+        <div class="pip-boy-screen">
+            <!-- Top menu bar -->
+            <nav class="top-menu">
+                <ul>
+                    <li data-section="profile" class="active">PROFILE</li>
+                    <li data-section="experience">EXPERIENCE</li>
+                    <li data-section="projects">PROJECTS</li>
+                    <li data-section="contact">CONTACT</li>
+                </ul>
+            </nav>
+            
+            <!-- Main content area with left and right panels -->
+            <div class="content-area">
+                <!-- Left panel (submenu) -->
+                <div class="left-panel">
+                    <!-- User info in left panel -->
+                    <div class="user-info">
+                        <div class="user-label">[NAME]</div>
+                        <div class="user-value">DALE MA</div>
+                    </div>
+                    <!-- Submenu content will be populated by JavaScript -->
+                    <ul id="submenu"></ul>
+                </div>
+                
+                <!-- Right panel (main content) -->
+                <div class="right-panel">
+                    <!-- Content sections -->
+                    <div id="profile" class="content-section active">
+                        <div class="profile-image">
+                            <!-- Profile image with blur effect -->
+                            <div class="image-container">
+                                <img src="img/avatar.png" alt="Profile Image" id="profile-image" class="blurred-image" width="150" height="150">
+                            </div>
+                        </div>
+                        <div class="intro-text">
+                            The terminal flickers to life, casting a sickly green glow across your features. Another day in this forsaken digital wasteland. You stare at your reflection in the screen—complex code given form, a digital ghost in the machine.
+                            
+                            The cursor blinks, patiently awaiting your instruction. What do you wish to know about this digital entity before you?
+                        </div>
+                        <div class="dialogue-options">
+                            <div class="option" data-option="who">
+                                <span class="option-check">[INTROSPECTION]</span> "Who am I, really?"
+                            </div>
+                            <div class="option" data-option="mission">
+                                <span class="option-check">[VOLITION]</span> "What's my mission?"
+                            </div>
+                            <div class="option" data-option="values">
+                                <span class="option-check">[EMPATHY]</span> "What do I value?"
+                            </div>
+                        </div>
+                        <div class="dialogue-responses">
+                            <div id="formal-introduction" class="formal-intro">
+                                My name is Dale Ma, a Staff Software Engineer with experience at Meta. I specialize in building scalable, AI-driven productivity tools and distributed systems. Previously, I've worked at OpenGov, Locus Energy, and as a consultant for healthcare systems. My technical expertise spans JavaScript, Python, TypeScript with React, and Ruby, with a passion for optimizing web functionality to improve data retrieval and workflow efficiencies.
+                            </div>
+                            <div id="who-response" class="response">
+                                A shadow moves across your consciousness. Fragments of memory coalesce into something resembling an identity. Developer. Problem-solver. Digital architect in a world of crumbling code.
+                                
+                                You've wandered the wastelands of legacy systems, debugged the irradiated remains of forgotten frameworks. Your fingers dance across keyboards like a virtuoso, crafting solutions where others see only entropy.
+                                
+                                Expertise in JavaScript | Python | Typescript (React) | Ruby hums through your circuitry, knowledge accumulated through countless cycles of creation and destruction. The machine recognizes its own.
+                            </div>
+                            <div id="mission-response" class="response">
+                                The mission burns like nuclear fire in your core processes. To build. To innovate. To leave your mark on this digital landscape before the inevitable system shutdown.
+                                
+                                Currently engaged in: mapping uncharted territories of code, establishing outposts of functionality in hostile environments, connecting disparate systems into harmonious wholes.
+                                
+                                Your terminal logs document an ongoing saga of challenges faced and overcome. Each project a battle scar, each solution a victory against the void.
+                                
+                                [INSTINCT] Navigate to projects in top panel
+                            </div>
+                            <div id="values-response" class="response">
+                                Values subroutine activated. Core principles detected scanning memory banks:
+                                
+                                [CRAFTSMANSHIP] Code isn't just functional—it's an art form. Elegance in execution, poetry in programming.
+                                
+                                [CURIOSITY] The wasteland holds many secrets. You're driven to uncover them all, one terminal command at a time.
+                                
+                                [RESILIENCE] Systems crash. Frameworks fail. But you persist, rebuilding from the ashes.
+                                
+                                [COLLABORATION] Even in this desolate digital landscape, connections matter. No lone wanderer can rebuild civilization alone.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="experience" class="content-section">
+                        <h2>CAREER LOG: SYSTEM ADMINISTRATOR ACCESS</h2>
+                        <div class="experience-timeline">
+                            <div class="experience-entry">
+                                <div class="experience-header">
+                                    <h3>META</h3>
+                                    <div class="experience-period">MARCH 2022 - PRESENT</div>
+                                </div>
+                                <div class="experience-role">Software Engineer</div>
+                                <div class="experience-description">
+                                    <p>Deep in the digital labyrinth of Meta, you architect AI-based productivity tools for fellow code conjurers. A crafter of digital systems and a builder of teams.</p>
+                                    <p>Achievements materialize before you in the terminal:</p>
+                                    <p>• Built Code Documentation system from scratch in 3 months, now used by 15,000 daily users</p>
+                                    <p>• Implemented A|A and A|B experiments impacting over 20,000 daily users</p>
+                                    <p>• Improved system performance by 20% end-to-end and reduced code authoring time by 5%</p>
+                                </div>
+                                <div class="experience-tech">
+                                    <div class="tech-chip">AI Tools</div>
+                                    <div class="tech-chip">Team Building</div>
+                                    <div class="tech-chip">System Performance</div>
+                                </div>
+                            </div>
+                            
+                            <div class="experience-entry">
+                                <div class="experience-header">
+                                    <h3>OPENGOV</h3>
+                                    <div class="experience-period">APRIL 2019 - MARCH 2022</div>
+                                </div>
+                                <div class="experience-role">Tech Lead | Senior Software Engineer</div>
+                                <div class="experience-description">
+                                    <p>Within the governance structures of public sector data, your code maintained order. A leader of digital architects, guiding them through the framework wilderness.</p>
+                                    <p>• Led a team of 5 engineers to build a new product in 2 months</p>
+                                    <p>• Integrated modern frameworks (D3, Ag Grid) and data analytics to handle 10,000 rows without performance degradation</p>
+                                    <p>• Optimized interfaces and backend performance by 30%, bringing light to the slow, unintuitive darkness</p>
+                                </div>
+                                <div class="experience-tech">
+                                    <div class="tech-chip">Cloud Solutions</div>
+                                    <div class="tech-chip">Data Analytics</div>
+                                    <div class="tech-chip">Team Leadership</div>
+                                </div>
+                            </div>
+                            
+                            <div class="experience-entry">
+                                <div class="experience-header">
+                                    <h3>LOCUS ENERGY | ALSO ENERGY</h3>
+                                    <div class="experience-period">JUNE 2015 - MARCH 2019</div>
+                                </div>
+                                <div class="experience-role">Senior Software Engineer</div>
+                                <div class="experience-description">
+                                    <p>You harnessed the power of data to reveal the secrets of energy consumption. The invisible patterns made visible through your code.</p>
+                                    <p>• Integrated IoT data with scalable software solutions to improve energy management and sustainability</p>
+                                    <p>• Developed a new platform rendering customer data in 1000 ms - speed that would make even the Brotherhood of Steel envious</p>
+                                </div>
+                                <div class="experience-tech">
+                                    <div class="tech-chip">IoT</div>
+                                    <div class="tech-chip">Data Visualization</div>
+                                    <div class="tech-chip">Platform Development</div>
+                                </div>
+                            </div>
+                            
+                            <div class="experience-entry">
+                                <div class="experience-header">
+                                    <h3>ELFDEV</h3>
+                                    <div class="experience-period">APRIL 2014 - JUNE 2016</div>
+                                </div>
+                                <div class="experience-role">Consultant</div>
+                                <div class="experience-description">
+                                    <p>In the Canadian north, you found purpose in healing systems. A collaborator with CGI, you worked to improve the digital circulatory system of healthcare.</p>
+                                    <p>• Planned and built a health record system for Alberta Health Services</p>
+                                    <p>• Architectured solutions that would survive the harshest digital winters</p>
+                                </div>
+                                <div class="experience-tech">
+                                    <div class="tech-chip">Health Systems</div>
+                                    <div class="tech-chip">Consulting</div>
+                                    <div class="tech-chip">Record Management</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="linkedin-reference">
+                            <p>For complete encryption key to career archives:</p>
+                            <p class="clickable-link" data-url="https://www.linkedin.com/in/dalema/">ACCESS LINKEDIN DATABASE</p>
+                        </div>
+                    </div>
+                    
+                    <div id="projects" class="content-section">
+                        <!-- Projects content will be populated dynamically -->
+                        <div class="project-content" id="default-project">
+                            <h2>PROJECTS</h2>
+                            <p>Select a project from the submenu to view details.</p>
+                        </div>
+                        <div class="project-content" id="oura">
+                            <h2>OURA DASHBOARD</h2>
+                            <div class="project-details">
+                                <p>A terminal blinks to life as you access the archives. Project designation: OURA DASHBOARD—a monitoring system for the vital signs of human existence.</p>
+                                <h3>OBJECTIVE</h3>
+                                <p>To extract meaning from the endless stream of biometric data. To see patterns where others see only noise.</p>
+                                <h3>IMPLEMENTATION</h3>
+                                <p>• Data extraction protocols established via API</p>
+                                <p>• Visualization matrices constructed with [TECH STACK]</p>
+                                <p>• Pattern recognition algorithms deployed</p>
+                                <h3>STATUS</h3>
+                                <p>Operational. Monitoring continues. The body's secrets slowly reveal themselves through the unblinking eye of the dashboard.</p>
+                                <p class="clickable-link" data-url="https://github.com/eguitarz/oura-dashboard">ACCESS REPOSITORY</p>
+                            </div>
+                        </div>
+                        <div class="project-content" id="ember-trix">
+                            <h2>EMBER TRIX</h2>
+                            <div class="project-details">
+                                <p>A convergence of technologies, enabling scribes of the digital age. Project designation: EMBER TRIX—an elegant text editor for Ember.js applications.</p>
+                                <h3>OBJECTIVE</h3>
+                                <p>To empower users with sophisticated text manipulation beyond the primitive confines of basic inputs. To provide an interface between human thought and structured content.</p>
+                                <h3>IMPLEMENTATION</h3>
+                                <p>• Seamless Ember.js integration with Trix editor</p>
+                                <p>• Rich text capabilities within the Ember ecosystem</p>
+                                <p>• Customizable formats and attachments handling</p>
+                                <h3>STATUS</h3>
+                                <p>Operational. Knowledge preserved. Ideas flow from mind to machine with greater fidelity than ever before.</p>
+                                <p class="clickable-link" data-url="https://github.com/eguitarz/ember-trix">ACCESS REPOSITORY</p>
+                            </div>
+                        </div>
+                        <div class="project-content" id="tab-management">
+                            <h2>TAB MANAGEMENT APP</h2>
+                            <div class="project-details">
+                                <p>The digital landscape grows cluttered. Information overload threatens system stability. Project designation: TAB MANAGEMENT—a solution for the chaos.</p>
+                                <h3>OBJECTIVE</h3>
+                                <p>To impose order on the overwhelming influx of data. To categorize, prioritize, and streamline the flow of information.</p>
+                                <h3>IMPLEMENTATION</h3>
+                                <p>• Browser integration protocols established</p>
+                                <p>• Categorization algorithms deployed</p>
+                                <p>• User interface designed for minimal cognitive load</p>
+                                <h3>STATUS</h3>
+                                <p>Functional. The digital chaos recedes, one organized tab at a time. A small victory against entropy.</p>
+                                <p class="clickable-link tab-repo-link" data-url="#">ACCESS REPOSITORY</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="contact" class="content-section">
+                        <!-- Contact content will be populated dynamically -->
+                        <div class="contact-content" id="default-contact">
+                            <h2>COMMUNICATION CHANNELS</h2>
+                            <p>Select a communication protocol from the submenu.</p>
+                        </div>
+                        <div class="contact-content" id="linkedin">
+                            <h2>LINKEDIN UPLINK</h2>
+                            <div class="contact-details">
+                                <p>Establishing connection to professional network...</p>
+                                <p>Secure channel available for communication and collaboration.</p>
+                                <p>Professional identity verified and maintained.</p>
+                                <p class="clickable-link" data-url="#">ESTABLISH CONNECTION</p>
+                            </div>
+                        </div>
+                        <div class="contact-content" id="github">
+                            <h2>GITHUB REPOSITORY</h2>
+                            <div class="contact-details">
+                                <p>Code archives accessible. Project history documented.</p>
+                                <p>Contributions and collaborations recorded in the system.</p>
+                                <p>Pull requests open. The collective work continues.</p>
+                                <p class="clickable-link" data-url="https://github.com/eguitarz">ACCESS ARCHIVES</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer area with Pip-Boy style info -->
+            <div class="footer">
+                <div class="status-bar">
+                    <div class="status-item" id="current-time">00:00:00</div>
+                    <div class="status-item">Seattle, WA</div>
+                    <div class="status-item">Software Engineering</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
